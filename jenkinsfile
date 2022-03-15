@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('build') {
+            steps {
+                echo "building the application..."
+                npm install
+                apt install nodejs
+                apt install jdk-8
+            }
+        }
+        stage('test') {
+            steps {
+                echo "testing the application..."
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo "deploying the application..."
+            }
+        }    
+    }
+}
